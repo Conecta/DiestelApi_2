@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Fri Jun 05 17:23:15 CDT 2015
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;DiestelApi_2-domain;DiestelApi_2-persistence;DiestelApi_2-service;DiestelApi_2-web;DiestelApi_2-webServDiestel;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=

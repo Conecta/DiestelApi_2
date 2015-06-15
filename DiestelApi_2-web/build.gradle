@@ -1,0 +1,15 @@
+apply plugin: 'jetty'
+
+dependencies {
+    compile project(':DiestelApi_2-service')
+	compile project(':DiestelApi_2-persistence')
+	compile project(':DiestelApi_2-domain')
+	compile project(':DiestelApi_2-webServDiestel')
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+	providedCompile 'jstl:jstl:1.2'
+}
+
+jettyRun{
+	reload = 'automatic'
+	scanIntervalSeconds = 10
+}

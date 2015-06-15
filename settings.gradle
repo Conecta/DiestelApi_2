@@ -1,0 +1,1 @@
+include "DiestelApi_2-domain","DiestelApi_2-persistence", "DiestelApi_2-service", "DiestelApi_2-web", ':DiestelApi_2-webServDiestel'

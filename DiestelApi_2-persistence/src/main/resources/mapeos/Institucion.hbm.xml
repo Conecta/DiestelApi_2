@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 4, 2015 7:57:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.domain.entities.Institucion" table="institucion">
+        <id name="idInstitucion" type="java.lang.Integer">
+            <column name="ID_INSTITUCION" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" />
+        </property>
+        <property name="montoDisponible" type="big_decimal">
+            <column name="MONTO_DISPONIBLE" precision="10" />
+        </property>
+        <property name="montoAcumulado" type="java.lang.Long">
+            <column name="MONTO_ACUMULADO" precision="10" scale="0" />
+        </property>
+        <property name="comisiones" type="java.lang.Long">
+            <column name="COMISIONES" precision="10" scale="0" />
+        </property>
+        <property name="iva" type="java.lang.Long">
+            <column name="IVA" precision="10" scale="0" />
+        </property>
+        <property name="razonSocial" type="string">
+            <column name="RAZON_SOCIAL" />
+        </property>
+        <property name="rfc" type="string">
+            <column name="RFC" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" />
+        </property>
+    </class>
+</hibernate-mapping>

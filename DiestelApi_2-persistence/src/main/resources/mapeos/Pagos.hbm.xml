@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 4, 2015 7:57:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.domain.entities.Pagos" table="PAGOS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="institucionOrigen" type="java.lang.Integer">
+            <column name="INSTITUCION_ORIGEN" />
+        </property>
+        <property name="caja" type="java.lang.Integer">
+            <column name="CAJA" />
+        </property>
+        <property name="cajero" type="java.lang.Integer">
+            <column name="CAJERO" />
+        </property>
+        <property name="referencia" type="java.lang.String">
+            <column name="REFERENCIA" />
+        </property>
+        <property name="skuServicio" type="java.lang.String">
+            <column name="SKU_SERVICIO" />
+        </property>
+        <property name="monto" type="java.math.BigDecimal">
+            <column name="MONTO" />
+        </property>
+        <property name="iva" type="java.math.BigDecimal">
+            <column name="IVA" />
+        </property>
+        <property name="comision" type="java.math.BigDecimal">
+            <column name="COMISION" />
+        </property>
+        <property name="tipoPago" type="java.lang.Integer">
+            <column name="TIPO_PAGO" />
+        </property>
+        <property name="fechaCaptura" type="java.util.Date">
+            <column name="FECHA_CAPTURA" />
+        </property>
+        <property name="codRespuesta" type="java.lang.Integer">
+            <column name="COD_RESPUESTA" />
+        </property>
+        <property name="reverso" type="java.lang.String">
+            <column name="REVERSO" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="descripcionResp" type="java.lang.String">
+            <column name="DESCRIPCION_RESP" />
+        </property>
+        <property name="leyenda" type="java.lang.String">
+            <column name="LEYENDA" />
+        </property>
+        <property name="autorizacion" type="java.lang.Integer">
+            <column name="AUTORIZACION" />
+        </property>
+        <property name="transaccion" type="java.lang.Integer">
+            <column name="TRANSACCION" />
+        </property>
+        <property name="sbResult" type="java.lang.String">
+            <column name="RESULT" />
+        </property>
+        <property name="dv" type="java.lang.Integer">
+            <column name="DV" />
+        </property>
+    </class>
+    <sql-query name="monto-total">
+    	<![CDATA[SELECT sum(p.monto) FROM diestel.pagos as p, diestel.catalogo_producto as cat 
+			where p.INSTITUCION_ORIGEN = :instOrigen 
+		    and p.COD_RESPUESTA = :codResp
+		    and p.SKU_SERVICIO = cat.SKU
+		    and cat.CATEGORIA between :cat1 and :cat2]]>
+    </sql-query>
+</hibernate-mapping>
